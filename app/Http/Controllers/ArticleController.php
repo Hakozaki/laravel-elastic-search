@@ -16,7 +16,7 @@ class ArticleController extends Controller
     }
 
     public function search(Request $request)
-    {
+    {        
         $articles = $this->find($request->search);
 
         return view('articles.index', [
