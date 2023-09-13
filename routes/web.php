@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use App\Models\Article;
 use Illuminate\Support\Facades\Route;
 
@@ -18,11 +19,8 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('articles.index', [
-        'articles' => Article::all(),
-    ]);
-});
+Route::get('/', [ArticleController::class, 'index'])->name('article.index');
+Route::get('/article/search', [ArticleController::class, 'search'])->name('article.search');
 
 Auth::routes();
 
