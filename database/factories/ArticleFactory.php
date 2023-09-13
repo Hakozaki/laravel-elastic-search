@@ -16,8 +16,7 @@ class ArticleFactory extends Factory
      * @return array<string, mixed>
      */
     public function definition(): array
-    {       
-        dd($this->tags());
+    {               
         return [
             'title' => fake()->sentence(),
             'body' => fake()->text(),
